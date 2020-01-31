@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>orientation websocker</title>
+
+    <style>
+        body {
+            margin: 0;
+            background: #111;
+            color: #fff;
+            display: flex;
+            flex-direction: column;
+        }
+
+        body * {
+            margin: 10px;
+        }
+
+        button {
+            height: 60px;
+        }
+
+        #message {
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>SEND IT !</h1>
+
+    <p id="message">messages...</p>
+
+    <h3>Socket:</h3>
+    <label for="ip">IP</label>
+    <input id="ip" placeholder="ws://127.0.0.1:8080" type="text" value="ws://192.168.1.14:8080" />
+
+    <button onclick="connect()">
+        connect
+    </button>
+    <button onclick="disconnect()">
+        disconnect
+    </button>
+
+
+    <h3>Orientiation:</h3>
+    <p id="ori">xxx</p>
+
+    <script src="main.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,22 @@
+{
+  "name": "orientation-websocket",
+  "version": "1.0.0",
+  "description": "sends device orientation data to another device via websockets",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/spencercap/orientation-websocket.git"
+  },
+  "author": "spencercap",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/spencercap/orientation-websocket/issues"
+  },
+  "homepage": "https://github.com/spencercap/orientation-websocket#readme",
+  "dependencies": {
+    "ws": "^7.2.1"
+  }
+}
