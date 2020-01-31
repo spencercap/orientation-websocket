@@ -33,6 +33,10 @@ npm run client
 on your DEVICE navigate to the CLIENT's IP + port, accept those self-signed certificates (that's https://192.168.1.14:8000 or similar)
 
 ---
+## normal setup
+- 1 server (computer)
+- 2 clients (device + computer)
+---
 ## usage
 1. input the IP + port of the server in the input field, then click connect. (something like: wss://192.168.1.14:9000)
 2. monitor your device's orientation in the server console. the server simply broadcasts this data back out to any other clients listening
