@@ -26,6 +26,13 @@ function connect() {
         console.log('closing socket');
         socket.close();
     });
+
+    // Messages from server
+    socket.addEventListener('message', function (event) {
+        console.log('message from server: ', event);
+        oriSElem.innerText = event.data;
+    });
+
 }
 
 function disconnect() {
@@ -40,6 +47,7 @@ function disconnect() {
 function deviceOrientationListener(event) {
 
     const ori = {
+        id: 'ori',
         alpha: event.alpha,
         beta: event.beta,
         gamma: event.gamma
@@ -66,8 +74,10 @@ if (window.DeviceOrientationEvent) {
 
 let message;
 let oriElem;
+let oriSElem;
 // on load
 document.addEventListener("DOMContentLoaded", function (event) {
     message = document.querySelector('#message');
     oriElem = document.querySelector('#ori');
+    oriSElem = document.querySelector('#oriS');
 });

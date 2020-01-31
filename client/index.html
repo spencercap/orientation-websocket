@@ -14,6 +14,7 @@
             color: #fff;
             display: flex;
             flex-direction: column;
+            overflow: hidden;
         }
 
         body * {
@@ -37,7 +38,7 @@
 
     <h3>Socket:</h3>
     <label for="ip">IP</label>
-    <input id="ip" placeholder="ws://127.0.0.1:8080" type="text" value="ws://192.168.1.14:8080" />
+    <input id="ip" placeholder="wss://192.168.1.14:9000" type="text" value="wss://192.168.1.14:9000" />
 
     <button onclick="connect()">
         connect
@@ -47,8 +48,11 @@
     </button>
 
 
-    <h3>Orientiation:</h3>
+    <h3>Orientiation (local):</h3>
     <p id="ori">xxx</p>
+
+    <h3>Orientiation (back from server):</h3>
+    <p id="oriS">xxx</p>
 
     <script src="main.js"></script>
 </body>

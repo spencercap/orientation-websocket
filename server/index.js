@@ -1,11 +1,31 @@
+const fs = require('fs');
+const https = require('https');
 const WebSocket = require('ws');
 
-const wss = new WebSocket.Server({ port: 8080 });
+const server = https.createServer({
+    cert: fs.readFileSync('../cert.pem'),
+    key: fs.readFileSync('../key.pem')
+});
+
+const wss = new WebSocket.Server({ server });
 
 wss.on('connection', function connection(ws) {
-    ws.on('message', function incoming(message) {
-        console.log('received: %s', message);
+    ws.on('message', function incoming(data) {
+        console.log('received: %s', data);
+
+        // re-broadcast incoming data
+        wss.clients.forEach(function each(client) {
+            if (client !== ws && client.readyState === WebSocket.OPEN) {
+                client.send(data);
+            }
+        });
+
     });
 
-    // ws.send('something'); // dont need to send anything back.
+    ws.send('im da server!');
+});
+
+// kick off the server
+server.listen(9000, () => {
+    console.log('local servers up @ port:', server.address().port);
 });
